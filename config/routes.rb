@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'registered_applications/new'
+
+  get 'registered_applications/create'
+
+  get 'registered_applications/update'
+
+  get 'registered_applications/edit'
+
+  get 'registered_applications/destroy'
+
   devise_for :users, controllers: {
     registrations: 'registrations'
   }
