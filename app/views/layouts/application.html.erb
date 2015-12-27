@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container-narrow well">
+	<div class="masthead">	
+		<%= render 'layouts/user_header' %>
+		<h3 class="muted"><%= link_to "Blocmetrics", root_path %></h3>
+		<h5 class="muted">A web application Analytics app</h5>
+	</div>
+</div>
+
+
 
 <%= yield %>
 

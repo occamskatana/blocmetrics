@@ -1,0 +1,10 @@
+<div class="pull-right user-info">
+	<div class="container-narrow">
+		<% if !current_user %>
+			<%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success' %>
+			<%= link_to "Sign In", 'devise/registrations#new', class: 'btn btn-info' %>
+		<% else %>
+			<!--user info here -->
+		<% end %>
+	</div>
+</div>
