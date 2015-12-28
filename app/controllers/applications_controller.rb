@@ -44,6 +44,25 @@ class ApplicationsController < ApplicationController
   	end
   end
 
+  def edit
+  	@application = Application.find(params[:id])
+  	@user = User.find(params[:user_id])
+  end
+
+  def update
+  	@application = Application.find(params[:id])
+  	@application.assign_attributes(application_params)
+  	@user = User.find(params[:user_id])
+
+  	if @application.save
+  		flash[:notice] = "Your app has been updated."
+  		redirect_to user_applications_path(current_user)
+  	else
+  		flash[:error] = "Your application was not able to be updated"
+  		redirect_to edit_user_application_path(@user, @application)
+  	end
+  end
+
 
  	private
 

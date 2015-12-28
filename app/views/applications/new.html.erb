@@ -6,6 +6,9 @@
 				<%= f.error_notification %>
 				<%= f.input :name %>
 				<%= f.input :url %>
+				<%= f.error :url, id: 'url_uniqueness_error' %>
+				<%= f.hint 'You must enter a unique url' %>
+				<%= f.error :base %>
 				<%= f.button :submit %>
 			<% end %>
 		</div>

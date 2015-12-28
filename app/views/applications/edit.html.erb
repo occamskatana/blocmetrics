@@ -1,0 +1,13 @@
+<div class="container-fluid">
+	<h2 align="center">Edit<%= @application.name %></h2>
+	<div class="form-wide" align="center">
+		<div class="user-form">
+			<%= simple_form_for [@user, @application], method: :patch do |f| %>
+				<%= f.error_notification %>
+				<%= f.input :name %>
+				<%= f.input :url %>
+				<%= f.button :submit, "Submit Changes" %>
+			<% end %>
+		</div>
+	</div>
+</div>
