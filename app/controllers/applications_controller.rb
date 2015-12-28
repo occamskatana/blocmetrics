@@ -1,5 +1,9 @@
 class ApplicationsController < ApplicationController
 
+  before_action :authenticate_user!
+
+  before_action :authorize_user
+
   def index
   	@user = User.find(params[:user_id])
   	@applications = @user.applications
@@ -66,6 +70,15 @@ class ApplicationsController < ApplicationController
 
 
  	private
+
+  def authorize_user
+    user = User.find(params[:user_id])
+    unless current_user.admin? || user == current_user
+      flash[:alert] = "You are not authorized to do that"
+      redirect_to root_path
+    end
+  end
+
 
 
  	def application_params
