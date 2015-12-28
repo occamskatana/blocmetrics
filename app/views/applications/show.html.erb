@@ -1,4 +1,21 @@
 <div class="container-fluid">
 	<h1 align="center"><%= @application.name %></h1>
-	<p align="center"><%= @application.url %></p>
+	<h4 align="center"><%= @application.url %></h4>
+</div>
+
+<h3 align="center"> <u><%= @events.count %> Events Logged</u></h3>
+<div class="container-fluid">	
+	<% @application.events.each do |e| %>
+		<div class="row well">
+			<div class="col-md-4">
+				<%= e.name %>
+			</div>
+			<div class="col-md-4">
+				Event Timestamp: <strong><%= e.created_at %></strong>
+			</div>
+			<div class="col-md-4">
+				Event ID: <%=e.id %>
+			</div>
+		</div>
+	<% end %>
 </div>
