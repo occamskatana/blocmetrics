@@ -1,0 +1,26 @@
+<div class="container">
+	<h1 align="center"><%= @user.user_name %>'s Applications </h1>
+</div>
+
+<div class="container">	
+	<div class="container-fluid" align="center">
+		<% @applications.each do |a| %>
+			<div class="row">
+				<div class="col-md-4">
+					<%= a.name %>
+				</div>
+				<div class="col-md-4">
+					<%= a.url %>
+				</div>
+				<div class="col-md-4">
+					<%= link_to "Delete", [@user, a], class: 'btn btn-danger', method: :delete %>
+					<%= link_to "Details", [@user, a], class: 'btn btn-info' %>
+				</div>
+			</div>
+			<br />
+		<% end %>
+		<%= link_to "Register New Application", new_user_application_path, class: 'btn btn-primary' %>
+	</div>
+</div>
+
+
