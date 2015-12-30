@@ -1,0 +1,11 @@
+<div class="container-fluid">
+	<div class="jumbotron">
+		<h1 align="center">Welcome to Blocmetrics!</h1>
+			<% if current_user %>
+				<h3 align="center"><%= link_to "Get Started", user_applications_path(current_user), class: 'btn btn-success'%></h3>
+			<% else %>
+			<h3 align="center"><%= link_to "Get Started", new_user_registration_path, class: 'btn btn-success'%></h3>
+			<% end %>
+	</div>
+</div>
+
