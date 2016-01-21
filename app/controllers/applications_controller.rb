@@ -9,7 +9,7 @@ class ApplicationsController < ApplicationController
   def show
   	@user = User.find(params[:user_id])
   	@application = Application.find(params[:id])
-    @events = @application.events.group_by(&:name)
+    @events = @application.events
   end
 
   def new
@@ -71,4 +71,5 @@ class ApplicationsController < ApplicationController
  	def application_params
  		params.require(:application).permit(:user, :name, :url)
  	end
+
 end

@@ -5,7 +5,7 @@
 
 <h3 align="center"> <u><%= @events.count %> Events Logged</u></h3>
 <div class="container-fluid">	
-	<% @application.events.each do |e| %>
+	<% @events.each do |e| %>
 		<div class="row well">
 			<div class="col-md-4">
 				<%= e.name %>
