@@ -3,6 +3,13 @@
 	<h4 align="center"><%= @application.url %></h4>
 </div>
 
+<div class="container-fluid">
+	<div class="container">
+		<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+		<%= pie_chart @application.events.group(:name).count %>
+	</div>
+</div>
+
 <h3 align="center"> <u><%= @events.count %> Events Logged</u></h3>
 <div class="container-fluid">	
 	<% @events.each do |e| %>
